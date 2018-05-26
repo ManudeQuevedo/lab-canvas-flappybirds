@@ -124,7 +124,11 @@ function gameOver() {
   ctx.strokeText("Game Over", 50, 200);
   // ctx.font = "50px Avenir";
   // ctx.fillStyle = "black";
+  var sound = new Audio();
 
+  sound.src = "game-over.mp3";
+  sound.currentTime = 0.1;
+  sound.play();
 }
 
 
@@ -169,6 +173,7 @@ function update() {
 function stop() {
   clearInterval(intervalo);
   intervalo = 0;
+  board.sound.pause();
 }
 
 function startGame() {
